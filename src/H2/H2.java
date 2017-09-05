@@ -20,12 +20,14 @@ public class H2 extends Applet {
 
     //een (lege) methode die de Applet initialiseert
     public void init() {
-
+        setBackground(Color.white);
     }
 
-    //een methode die de inhoud van het scherm tekent
     public void paint(Graphics g) {
-        g.drawString("Welcome to Java!!", 50, 60);
+        g.setColor(Color.blue);
+        g.drawString("Timothy", 50, 60 );
+        g.setColor(Color.red);
+        g.drawString("van Keulen", 50, 75 );
     }
 
 }
