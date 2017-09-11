@@ -24,10 +24,19 @@ public class Opdracht4 extends Applet{
         g.drawString("Jeroen",165,195);
         g.drawString("Hans",245,195);
         //Staaf Valerie
+        g.setColor(Color.red);
+        g.fillRect(90,115,30,65);
+        g.setColor(Color.black);
         g.drawRect(90,115,30,65);
         //Staaf Jeroen
+        g.setColor(Color.green);
+        g.fillRect(170,25,30,155);
+        g.setColor(Color.black);
         g.drawRect(170,25,30,155);
         //Staaf Hans
+        g.setColor(Color.blue);
+        g.fillRect(250,55,30,125);
+        g.setColor(Color.black);
         g.drawRect(250,55,30,125);
     }
 
