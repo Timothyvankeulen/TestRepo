@@ -10,7 +10,7 @@ public class Opdracht2 extends Applet {
 
     public void paint(Graphics g){
         setBackground(Color.white);
-        g.setColor(Color.blue);
+        g.setColor(Color.black);
         //Het dak van het huis
         g.drawLine(50,100,150,100);
         g.drawLine(100,50,150,100);

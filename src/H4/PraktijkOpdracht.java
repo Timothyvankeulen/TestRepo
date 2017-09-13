@@ -41,5 +41,4 @@ public class PraktijkOpdracht extends Applet {
         g.drawOval(400,135,75,75);
         g.drawString("Cirkel",420,225);
     }
-
 }
