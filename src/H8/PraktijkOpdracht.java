@@ -21,11 +21,9 @@ public class PraktijkOpdracht extends Applet{
     public void init(){
         //Het eerste tekstvak
         tekstvak1 = new TextField("", 20);
-        tekstvak1.addActionListener(new Tekstvak1Listener());
         add (tekstvak1);
         //Het tweede tekstvak
         tekstvak2 = new TextField("", 20);
-        tekstvak2.addActionListener(new Tekstvak2Listener());
         add (tekstvak2);
         //Knop van Keer
         keer = new Button ();
@@ -55,22 +53,6 @@ public class PraktijkOpdracht extends Applet{
 
     public void paint(Graphics g){
 
-    }
-
-    class Tekstvak1Listener implements ActionListener {
-        public void actionPerformed (ActionEvent e) {
-            String s = tekstvak1.getText();
-            getal1 = Integer.parseInt( s );
-            repaint();
-        }
-    }
-
-    class Tekstvak2Listener implements ActionListener {
-        public void actionPerformed (ActionEvent e) {
-            String s = tekstvak2.getText();
-            getal2 = Integer.parseInt( s );
-            repaint();
-        }
     }
 
     class ListenerKeer implements ActionListener {
@@ -129,4 +111,3 @@ public class PraktijkOpdracht extends Applet{
         }
     }
 }
-
