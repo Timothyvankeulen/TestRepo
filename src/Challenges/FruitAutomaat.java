@@ -11,7 +11,6 @@ public class FruitAutomaat extends Applet{
     Button kredietKnop;
     private URL pad;
 
-    private String[]
 
     public void init(){
         //SpeelKnop
