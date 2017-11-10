@@ -26,7 +26,6 @@ public class Opdracht6a extends Applet {
         ButtonListener bl = new ButtonListener();
         buttonOke.addActionListener(bl);
         add(buttonOke);
-
         aantal = 0;
     }
 
@@ -35,7 +34,7 @@ public class Opdracht6a extends Applet {
         if (knopGeklikt) {
             //Als de waarde is gevonden voer if uit anders else
             if (gevonden) {
-                g.drawString("De waarde " + gezocht + " is " + index + " keer gevonden.", 20, 50);
+                g.drawString("De waarde " + gezocht + " is " + aantal + " keer gevonden.", 20, 50);
             }
             else {
                 g.drawString("De waarde is niet gevonden.", 20, 50);
@@ -54,7 +53,6 @@ public class Opdracht6a extends Applet {
             //Invoer TextField
             String s1 = tekstvak.getText();
             gezocht = Integer.parseInt(s1);
-            repaint();
 
             //Zoekt waarde in tabel
             gevonden = false;
@@ -65,6 +63,9 @@ public class Opdracht6a extends Applet {
                     index = teller;
                 }
                 teller++;
+            }
+            if (gevonden) {
+                aantal++;
             }
             repaint();
         }
