@@ -4,29 +4,26 @@ import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Opdracht6a extends Applet {
-    TextField tekstvak;
-    Button buttonOke;
+public class Opdracht5 extends Applet {
+    private TextField tekstvak;
+    private Button buttonOke;
 
     private int index = 0;
     private boolean knopGeklikt;
     private boolean gevonden;
-    private int[] waarde = {0, 1, 2, 2, 3, 3, 3, 4, 4, 5};
-    private int gezocht;
-    int aantal;
+    private double[] salaris = {100.0, 200.0, 500.0, 400.0, 300.0};
+    private double gezocht;
 
     public void init() {
         //Maakt TextField
         tekstvak = new TextField("", 5);
         add(tekstvak);
-
         //Maakt nieuwe button (buttonOke)
         buttonOke = new Button();
         buttonOke.setLabel(" Oke ");
         ButtonListener bl = new ButtonListener();
         buttonOke.addActionListener(bl);
         add(buttonOke);
-        aantal = 0;
     }
 
     public void paint(Graphics g) {
@@ -34,14 +31,14 @@ public class Opdracht6a extends Applet {
         if (knopGeklikt) {
             //Als de waarde is gevonden voer if uit anders else
             if (gevonden) {
-                g.drawString("De waarde " + gezocht + " is " + aantal + " keer gevonden.", 20, 50);
+                g.drawString("De waarde is gevonden.", 20, 50);
             }
             else {
                 g.drawString("De waarde is niet gevonden.", 20, 50);
             }
-
             //Tekst op het scherm
             g.drawString("Index Positie is: " + index, 20, 80);
+            g.drawString("" + gezocht, 20, 110);
         }
     }
 
@@ -52,20 +49,19 @@ public class Opdracht6a extends Applet {
 
             //Invoer TextField
             String s1 = tekstvak.getText();
-            gezocht = Integer.parseInt(s1);
+            gezocht = Double.parseDouble(s1);
 
             //Zoekt waarde in tabel
             gevonden = false;
             int teller = 0;
-            while (teller < waarde.length) {
-                if (waarde[teller] == gezocht) {
+            while (teller < salaris.length) {
+                System.out.println("Index is: " + teller);
+                if (salaris[teller] == gezocht) {
                     gevonden = true;
                     index = teller;
+                    break;
                 }
                 teller++;
-            }
-            if (gevonden) {
-                aantal++;
             }
             repaint();
         }
